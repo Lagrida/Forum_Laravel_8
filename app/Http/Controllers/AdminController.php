@@ -64,9 +64,9 @@ class AdminController extends Controller
     }
     public function deleteUser($id)
     {
-        if($id == 9 || $id == 10 || $id == 11){
+        /*if($id == 9 || $id == 10 || $id == 11){
             return response(["message" => "you can't delete those users !"], 403);
-        }
+        }*/
         $user = User::findOrFail($id);
         $user->delete();
         return response(['message' => 'user is deleted successefuly'], 200);
