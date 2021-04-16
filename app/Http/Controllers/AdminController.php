@@ -15,9 +15,9 @@ class AdminController extends Controller
         return $users;
     }
     public function updateUser(Request $request, $id){
-        if($id == 9 || $id == 10 || $id == 11){
+        /*if($id == 9 || $id == 10 || $id == 11){
             return response(["message" => "you can't update those users !"], 403);
-        }
+        }*/
         $request->validate([
             'email' => ['required', Rule::unique('users')->ignore($id), 'email'],
             'username' => ['required', Rule::unique('users')->ignore($id), 'min:3', 'max:20']
